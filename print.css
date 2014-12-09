@@ -1,0 +1,372 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@charset "UTF-8";
+/* CSS Document */
+
+/* reset styles
+------------------------------------------------ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+/* fonts
+------------------------------------------------ */
+@font-face {
+    font-family: 'museo_sans';
+    src: url('fonts/MuseoSans/MuseoSans_500-webfont.eot');
+    src: url('fonts/MuseoSans/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/MuseoSans/MuseoSans_500-webfont.woff') format('woff'),
+         url('fonts/MuseoSans/MuseoSans_500-webfont.ttf') format('truetype'),
+         url('fonts/MuseoSans/MuseoSans_500-webfont.svg#museo_sans500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/* screen layout basics 
+-------------------------------------------- */
+* {
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+body {
+	position:relative;
+}
+#preload,
+#popper,
+#popper-2,
+#start-reading,
+#view-list {
+	display:none !important;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+.big-text {
+	color:#000;
+	font-family: "arvo",Georgia,serif;
+	font-weight:bold;
+	width:78%;
+	margin:0 auto;
+	padding:100px 30px 70px;
+	text-align:center;
+	opacity:1.0 !important;
+}
+.big-text h2 {
+	font-size:56px !important;
+	line-height:46px !important;
+	padding:40px 25px 30px;
+	background:rgba(82,44,17,0.25);
+	text-transform:uppercase;
+	display:inline-block;
+}
+.big-text p {
+	font-size:44px !important;
+	line-height:48px !important;
+	background:rgba(82,44,17,0.25);
+	display:inline-block;
+	padding:40px 25px 30px;
+}
+.big-text h2 small {
+	font-size:22px;
+}
+.plain-color {
+	background-color:#6c6a59;
+}
+.main-content {
+	width:98%;
+	padding:0;
+	margin:0 auto;
+	background:#fff;
+}
+.big-background {
+	visibility:visible !important;
+	background-image:inherit !important;
+}
+.car-elevator,
+.intro {
+	height:auto !important;
+	overflow:hidden;
+}
+#section-image-1 {
+	height:auto !important;
+	overflow:hidden;
+}
+.intro h1 {
+	color:#000;
+	font-size:40px;
+	line-height:60px;
+	padding-top:20px;
+	font-family:'museo_sans',Georgia, serif;
+	letter-spacing:1px;
+}
+.intro h1 big {
+	display:block;
+	font-size:120px;
+	line-height:110px;
+	margin:6px 0;
+	letter-spacing:-2px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+#author {
+	margin-bottom:33px;
+}
+
+
+/* Slide 1 */
+#section-image-1 .big-background {background-image:url('images/3_newspaper.jpg') !important;}
+
+
+/* Slide 2 */
+#section-image-2 .big-background {background-image:url('img/corn-field.jpg')}
+#section-image-2 .big-background-3 {background-image:url('images/Lohrville_SectionV1.jpg')}
+
+
+/* Slide 3 */
+#section-image-3 .big-background {background-image:url('img/Rockford_overlay.jpg')}
+
+/* chapter 7 */
+#section-image-4 .big-background {background-image:url('images/IowaCity_SectionV1.jpg')}
+
+/* Chapter 9 */
+#section-image-5 .big-background {background-image:url('images/kennywood.jpg')}
+
+/* Chapter 13 */
+#section-image-6 .big-background {background-image:url('img/fm_cafeteria.jpg')}
+
+/*Chapter 12 */
+#section-image-7 .big-background {background-image:url('img/fm_overhead.jpg')}
+
+/*Chapter 16 */
+#section-image-8 .big-background {background-image:url('img/SanBernadino-grid.jpg')}
+
+/* General Styles
+--------------------------------------------------*/
+em {
+	font-style:italic;
+}
+header {
+	padding:0 8px;
+	border-bottom:1px solid #ddd;
+	background:#b2a880;
+	width:100%;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	position:absolute;
+	top:-100px;
+	z-index:99999;
+}
+footer#footer {
+	width:100%;
+	padding:2em;
+	background:#57574a;
+	clear:both;
+	position:relative;
+	z-index:10;
+	color:#ccc;
+}
+#story p a {
+	background:#eee;
+	color:#222;
+	text-decoration:none;
+}
+.share-box,
+.outset-credit {
+	display:none;
+}
+header {
+	position:absolute;
+	top:0;
+}
+.fixed-menu {
+	border-bottom:1px solid #57574a;
+	position:absolute;
+	left:0px;
+	top:2em;
+	height:45px;
+	background:#888;/* #b2a880;  /*#c6be9e;*/
+	z-index:9999;
+	opacity: 0;
+	filter: alpha(opacity=70);
+	width:100%!important;
+	padding:0;
+	/*box-shadow:0 1px 3px #666;*/
+}
+.fixed-menu img {
+	height:38px;
+	padding:12px 10px 5px;
+	display:inline-block;
+}
+.fixed-menu ul,
+header ul {
+	display:none;
+}
+
+#story {
+	font-family:'Lato', Georgia, serif;
+	width:100%;
+	margin:0;
+	position:absolute;
+	font-weight:400;
+	letter-spacing:0.1px;
+	color:#282828;
+}
+#story strong {
+	font-weight:900;
+	color:#131313;
+}
+#story p,
+#story ul {
+	font-size:16px;
+	line-height:25px;
+	margin-bottom:20px;
+}
+#story li {
+	margin-left:10%;
+	margin-bottom:20px;
+}
+#story .media,
+.story-slider,
+#start-reading {
+	display:none;
+}
+
+.col-set {
+	clear:both;
+}
+.col-set .right {
+	float:none;
+	width:100%;
+	padding-left:0%;
+	border-left:none;
+}
+.col-set .left {
+	width:100%;
+	margin:20px 0%;
+	float:none;
+	padding:20px 5px;
+	font-family:'arvo',sans-serif;
+	color:#999;
+	font-size:15px;
+	border-top:2px dotted #ccc;
+	border-bottom:2px dotted #ccc;
+}
+.col-set .left img {
+	float:left;
+	width:20%;
+	margin-right:20px;
+}
+
+
+#story h3 {
+	font-size:44px;
+	padding:10px 0 6px;
+}
+.semi-break {
+	width:100%;
+	text-align:center;
+	font-size:9px;
+	margin:60px 0;
+	letter-spacing:30px;
+	color:#333;
+}
+.img-box {
+	width:70%;
+	margin:0 auto 22px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	position:relative;
+}
+.col-set .img-box img {
+	border:2px solid #eee !important;
+}
+.img-box-left {
+	width:35%;
+	float:left;
+	margin:30px 35px 30px 0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+.img-box-right {
+	width:35%;
+	float:right;
+	margin:30px 0 40px 35px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+.img-box-left#portrait {
+	width:30%;
+}
+.img-box img,
+.img-box-left img,
+.img-box-right img {
+	width:100%;
+	border-top:9px solid #eee;
+	border-right:9px solid #eee;
+	border-left:9px solid #eee;
+	border-bottom:16px solid #eee;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-shadow:0 1px 7px #9b9683;
+}
+.img-box p,
+.img-box-left p,
+.img-box-right p {
+	font-size:13px !important;
+	line-height:17px !important;˙
+	padding:10px 0 10px !important;
+	margin-top:7px !important;
+	font-family:'arvo', 'helvetica neue' !important;
+	color:#888;
+}
+
+/** the map ***/
+#map,
+#map-container,
+h3.toolbox {
+	display:none;
+}
+
+/*** backgrounds ***/
+.big-background {
+	width:100%;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	position:static;
+	background-position:center top;
+	background-size:100% auto !important;
+	height:auto;
+}
+.big-background-2 {
+	display:none !important;
+}
+
+
+
