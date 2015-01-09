@@ -123,6 +123,7 @@ else {
 }*/
 
 
+
 $('#about-page').css({'height':'auto'});
 
 	if($(window).width() < 800){
@@ -148,8 +149,6 @@ $('#about-page').css({'height':'auto'});
 		$('li#mag-menu > a').html('<i class="fa fa-bars"></i>');
 	}
 	
-
-	
 	$(window).resize(function() {
 		if($(window).width() < 800){
 			$('.intro').height(winHeight * 1.55);
@@ -158,7 +157,6 @@ $('#about-page').css({'height':'auto'});
 			$('.intro').height(winHeight * 1.55);
 		}
 		
-	
 	if($(window).width() < 550){
 		$('li#mag-menu > a').html('<i class="fa fa-bars"></i>');
 	}
@@ -171,26 +169,18 @@ $('#about-page').css({'height':'auto'});
 
 $('a.media').media({width:'100%', height:455});
 
-
-
 $('a#view-list').click(function() {
 		
 		$('#section-image-1').goTo();
-		
-		
-
-		
 	});
 	
-	
-	
-	// in-story image slider
-/*	$(".jCarouselLite").jCarouselLite({
+		// in-story image slider ADDED KM 01-05-14
+	$(".jCarouselLite").jCarouselLite({
     	btnNext: ".next",
     	btnPrev: ".prev"
 	});
 	var slideWidth = $('.story-slider li').width();
-	$('.story-slider li').height(slideWidth * 0.6);*/
+	$('.story-slider li').height(slideWidth * 0.6);
 	
 // Chapter Markers Move On Scroll
 	$(window).scroll(function() {
@@ -199,7 +189,7 @@ $('a#view-list').click(function() {
 		var docbottom = docheight - 50;
 		var sectionTop = wintop + 30;
 		var divFirst = $('#section-1').position().top;
-		//var divSecond = $('#section-2').position().top;
+		var divSecond = $('#section-2').position().top;
 		var divThird = $('#section-3').position().top;
 		var divFourth = $('#section-4').position().top;
 		var divFifth = $('#section-5').position().top;
@@ -216,13 +206,7 @@ $('a#view-list').click(function() {
 		var divSixteen = $('#section-16').position().top;
 		var divSeventeen = $('#section-17').position().top;
 		
-/*		var introFade = $('.big-background-2').position().top;
-		var soundTrigger = introFade + (winHeight * 1.75);
-		var soundOff = introFade + (winHeight * 2);
-		var introTrigger = introFade + (winHeight * 2);*/
-		
 
-		
 		if(divFirst < sectionTop && divThird > sectionTop) {
 			$('header ul li').removeClass('currentCh');
 			$('header ul li.one').addClass('currentCh');
@@ -292,10 +276,7 @@ $('a#view-list').click(function() {
 			$('header ul li.seventeen').addClass('currentCh');
 		}
 		
-		
 	});
-	
-	
 	
 	//Fixed Menu
 	if ($('.fixed-menu').size() && fixed_menu == true) {
@@ -305,25 +286,18 @@ $('a#view-list').click(function() {
 		$('.fixed-menu').find('ul').children('li').each(function(){
 			$(this).children('a').append('<div class="menu_fadder"/>');
 		});
-		
 		var fixd_menu = setInterval(scrolled_menu, 100);
 		
 		// changing chapters on click
 		$('.sub_menu li').click(function() {
 		//alert('i work');
-		
 			$('.sub_menu li').removeClass('currentCh');
 			$(this).addClass('currentCh');	
-		
 				var thisTop = $('#section-'+ $(this).data('target'));
 				var thisScrollTop = thisTop.position().top;
-				
 			$(thisTop).goTo(); 
-				
-		
 		});
 	} // end if fixed-menu
-	
 	
 	// Popup Image Function
 	$('img.popper').click(function() {
@@ -337,16 +311,10 @@ $('a#view-list').click(function() {
 			var popWidth = winWidth * 0.64;
 			$('#popper').width(popWidth);
 		}
-		
 		$('#popper').css({'display':'inline-block'});
 		$('#popper-2').css({'display':'none'});
-												
 		$('#popper').html('<img src=' + imgSrc + ' />');
-				
-					
 		$('#popper-bg').fadeIn(300);
-		
-		
 	});
 	
 	$('#popper-bg').click(function(e) {
@@ -359,9 +327,7 @@ $('a#view-list').click(function() {
 	$('img.popper-2').click(function() {
 		var imgSrc = $(this).attr('src');
 		var imgCapt = $(this).attr('alt');
-				
 		$(this).parent('li').addClass('current');
-		
 		
 		if($(window).width() > 1031) {
 			var popHeight = winHeight * 0.75;
@@ -372,7 +338,6 @@ $('a#view-list').click(function() {
 			$('#popper-2').width(popWidth);
 		}
 		
-		
 		$('#popper-inner').height(popHeight);
 		$('#popper-2').css({'display':'inline-block'});
 		$('#popper').css({'display':'none'});
@@ -380,7 +345,6 @@ $('a#view-list').click(function() {
 		$('#popper-inner').html('<img src=' + imgSrc + ' />');
 		$('#popper-caption').html('<p>' + imgCapt + '</p>');
 		
-				
 		$('#popper-bg').fadeIn(300);
 		
 		var captionWidth = $('#popper-inner').width();
@@ -412,7 +376,7 @@ $('a#view-list').click(function() {
 		});
 		
 		return false;
-	});
+	}); 
 	
 	$('.next-img').click(function() {
 		$('#popper-inner img').fadeOut(200, function() {
@@ -448,7 +412,6 @@ $('a#view-list').click(function() {
 	});
 	
 }); // end doc ready functions
-
 
 function scrolled_menu() {
 	if ($(window).scrollTop() > jQuery('#section-1').position().top) {
