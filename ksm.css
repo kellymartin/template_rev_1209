@@ -85,7 +85,7 @@ html[xmlns] .clearfix {
 }
 .big-text h2 {
 	font-size:56px !important;
-	line-height:44px !important;
+	line-height:48px !important;
 	padding:40px 25px 30px;
 	background:rgba(100,100,100,0.35);
 	text-transform:uppercase;
@@ -95,13 +95,16 @@ html[xmlns] .clearfix {
 }
 .big-text p {
 	font-size:44px !important;
-	line-height:48px !important;
 	background:rgba(82,44,17,0.25);
 	display:inline-block;
 	padding:40px 25px 30px;
 }
 .big-text h2 small {
-	font-size:22px;
+	display:block;
+	font-size:50%;
+	line-height:105% !important;
+	margin-top:.5em;
+	padding-bottom:.7em;
 }
 .plain-color {
 	background-color:#6c6a59;
@@ -755,17 +758,19 @@ p.carousel-credit {
 
 /** the map ***/
 
-.mapbox {
+#mapbox {
 	display:block;
 	height:550px; 
 	width:120%;
 	position:relative;
 	margin-top:0 !important;
 	margin-bottom:3em !important;
+	overflow:hidden;
+	z-index:12;
 }
 .maptext {
 		margin-top:4em !important;
-		margin-bottom:.0!important;
+		margin-bottom:2em!important;
 		width:120%;
 }
 .maptext h8 {
@@ -783,13 +788,35 @@ p.carousel-credit {
 	margin-bottom:.15em !important;	
 	}
 #locator-map {
-	display:block;
 	position:absolute;
 	top:0;
 	bottom:0;
+	left:0;
+	right:0;
 	width:100%;
-	margin: 3em 0;
+	/*margin: 3em 0;*/
 }
+
+/** SLIDER HEADLINE & EXPLAINER **/
+.slidertext {
+		margin-top:4em !important;
+		margin-bottom:1em!important;
+		width:120%;
+}
+.slidertext h8 {
+	font-family:arial, helvetica, sans-serif;
+	font-size: 2em;
+	font-weight:bold;
+	text-transform:uppercase;
+	color:#54A8A8;
+}
+.slidertext p {
+	color:#54A8A8;
+	font-size:17px !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	line-height:18px !important;
+	margin-bottom:.15em !important;	
+	}
 	
 /* credits */
 .outset-credit {
@@ -911,9 +938,8 @@ p.carousel-credit {
 	/* Slide 3 */
 	#section-image-3 .big-background {background-image:url('images/bg03.jpg')}
 
-
 	.big-text {
-		padding:200px 30px 200px;
+		padding:150px 30px;
 	}
 	#popper,
 	#popper-2 {
@@ -961,7 +987,7 @@ p.carousel-credit {
 	}
 	.intro h1,
 	.intro-2 h1 {
-		font-size:24px; /*ask melanie about em vs px for type and responsiveness */
+		font-size:24px; 
 		line-height:26px;
 		padding-top:20px;
 		padding-bottom:.8em;
@@ -1015,7 +1041,7 @@ p.carousel-credit {
 }
 
 /* Mobile Landscape Size (devices and browsers) */
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 
 	footer#footer a {
 	font-size:50% !important;
@@ -1077,21 +1103,22 @@ p.carousel-credit {
 		width:80%;
 	}
 	.big-text h2 {
-		font-size:20px !important;
-		line-height:22px !important;
+		font-size:24px !important;
+		line-height:26px !important;
 		padding:20px 20px;
 	}
 	.big-text {
-		width:88%;
-		padding: 150px 30px !important;
+		width:80%;
+		padding:100px 30px !important; /** this controls the height of the section opener images since they are background images **/
 	}
 	.big-text h2 small {
-	font-size:14px !important;
+	font-size:18px !important;
+	line-height:20px !important;
 }
 	.big-text p {
 		font-size:20px !important;
 		line-height:22px !important;
-		padding:35px 25px 40px 0px !important;
+		padding:40px 20px !important;
 	}
 	#story section {
 		margin-top:0px;
@@ -1158,21 +1185,31 @@ p.carousel-credit {
 
 /* Mobile Portrait Size */
 @media (max-width: 550px) {
-/*	.intro {max-height:500px !important}
-*/
+	
+	.big-text {
+		width:80%;
+		padding: 45px 10px !important; /** this controls the height of the section opener images since they are background images **/
+	}
 	.big-text h2 {
 		font-size:20px !important;
 		line-height:22px !important;
-		padding:20px 20px;
+		padding: 10px 5px 0 5px !important;
 	}
-	.big-text {
-		width:88%;
-		padding: 80px 30px 40px 0px !important;
+	.big-text p {
+		font-size:16px !important;
+		line-height:18px !important;
 	}
+	.big-text h2 small {
+	font-size:14px !important;
+	line-height:16px !important;
+}
+
 	.big-text p {
 		font-size:20px !important;
 		line-height:22px !important;
+		padding:30px 20px !important;
 	}
+
 	.intro h1	{
 		color:#fff;
 		font-size:24px;
